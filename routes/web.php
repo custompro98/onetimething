@@ -7,9 +7,9 @@ Route::view('/', 'welcome');
 
 Route::get('/secrets', [SecretController::class, 'index'])
     ->middleware(['auth', 'verified'])
-    ->name('secrets');
+    ->name('secrets.index');
 
-Route::get('/secrets/{id}', [SecretController::class, 'show'])
+Route::get('/secrets/{slug}', [SecretController::class, 'show'])
     ->middleware(['auth', 'verified'])
     ->name('secrets.show');
 

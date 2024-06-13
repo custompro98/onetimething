@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -48,6 +49,9 @@ class User extends Authenticatable
 
     public function secrets(): HasMany
     {
-        return $this->hasMany(Secret::class);
+        return $this
+            ->hasMany(Secret::class)
+            ->where('expired_at', '>=', Carbon::now('UTC'))
+            ->orderBy('name', 'asc');
     }
 }

@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('secrets', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->string('name');
             $table->string('value');
             $table->foreignIdFor(User::class)->constrained('users')->cascadeOnDelete();
@@ -21,6 +22,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->unique(['user_id', 'name']);
+            $table->unique(['user_id', 'slug']);
         });
     }
 

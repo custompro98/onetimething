@@ -22,10 +22,21 @@ new class extends Component
 ?>
 
 <div>
-    <ul>
+    <table class="w-full">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Expires</th>
+            </tr>
+        </thead>
         @foreach ($secrets as $secret)
-            <li class="list-disc"><a class="text-blue-500 underline"
-                    href="{{ route('secrets.show', $secret->id) }}">{{ $secret->name }}</a></li>
+            <tr class="odd:bg-gray-100 even:bg-gray-200 hover:bg-gray-300">
+                <td class="p-2">
+                    <a class="text-blue-500 underline" href="{{ route('secrets.show', $secret->slug) }}"
+                        wire:navigate>{{ $secret->name }}</a>
+                </td>
+                <td class="p-2 text-center">{{ $secret->expiredAtHumanized() }}</td>
+            </tr>
         @endforeach
-    </ul>
+    </table>
 </div>

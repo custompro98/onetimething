@@ -33,7 +33,7 @@ new class extends Component
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('secrets')" :active="request()->routeIs('secrets')" wire:navigate>
+                    <x-nav-link :href="route('secrets.index')" :active="request()->routeIs('secrets.index')" wire:navigate>
                         {{ __('Secrets') }}
                     </x-nav-link>
                 </div>
@@ -96,7 +96,7 @@ new class extends Component
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('secrets')" :active="request()->routeIs('secrets')" wire:navigate>
+            <x-responsive-nav-link :href="route('secrets.index')" :active="request()->routeIs('secrets.index')" wire:navigate>
                 {{ __('Secrets') }}
             </x-responsive-nav-link>
         </div>

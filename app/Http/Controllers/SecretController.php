@@ -13,10 +13,10 @@ class SecretController extends Controller
         return view('secrets.index', []);
     }
 
-    public function show(Request $request, int $id): View|Factory
+    public function show(Request $request, string $slug): View|Factory
     {
         return view('secrets.show', [
-            'secret' => auth()->user()->secrets()->findOrFail($id),
+            'secret' => auth()->user()->secrets()->where('slug', $slug)->firstOrFail(),
         ]);
     }
 }
