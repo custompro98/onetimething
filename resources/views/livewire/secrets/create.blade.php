@@ -21,7 +21,7 @@ new class extends Component
             ->secrets()
             ->create([
                 'name' => $this->name,
-                'slug' => Str::slug($this->name),
+                'slug' => hash('md5', auth()->user()->email.Str::slug($this->name)),
                 'value' => Crypt::encryptString($this->value),
                 'expired_at' => Carbon::now('UTC')->addDays(1),
             ]);
