@@ -25,6 +25,11 @@ new class extends Component
                 'value' => Crypt::encryptString($this->value),
                 'expired_at' => Carbon::now('UTC')->addDays(1),
             ]);
+
+        $this->name = '';
+        $this->value = '';
+
+        $this->dispatch('secret.created');
     }
 };
 

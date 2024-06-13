@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Eloquent\Collection;
+use Livewire\Attributes\On;
 use Livewire\Volt\Component;
 
 new class extends Component
@@ -12,7 +13,8 @@ new class extends Component
         $this->getSecrets();
     }
 
-    private function getSecrets()
+    #[On('secret.created')]
+    public function getSecrets()
     {
         $this->secrets = auth()->user()->secrets()->get();
     }
