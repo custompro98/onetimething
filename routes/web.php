@@ -9,6 +9,10 @@ Route::get('/secrets', [SecretController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('secrets');
 
+Route::get('/secrets/{id}', [SecretController::class, 'show'])
+    ->middleware(['auth', 'verified'])
+    ->name('secrets.show');
+
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
