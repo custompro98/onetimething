@@ -12,10 +12,6 @@ Route::get('/secrets', [SecretController::class, 'index'])
 Route::get('/secrets/{slug}', [SecretController::class, 'show'])
     ->name('secrets.show');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
-
 Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
