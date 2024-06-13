@@ -69,6 +69,6 @@ new class extends Component
             <input type="password" wire:model="value" placeholder="api-1234567890" />
             <x-input-error :messages="$errors->get('value')" class="mt-2" />
         </div>
-        <button type="submit" class="border border-black max-w-fit p-2">Create</button>
+        <button type="submit" class="border border-black max-w-fit p-2 rounded-lg">Create</button>
     </div>
 </form>

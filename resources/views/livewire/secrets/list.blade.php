@@ -30,7 +30,7 @@ new class extends Component
             </tr>
         </thead>
         @foreach ($secrets as $secret)
-            <tr class="odd:bg-gray-100 even:bg-gray-200 hover:bg-gray-300">
+            <tr class="odd:bg-white even:bg-gray-100 hover:bg-gray-200">
                 <td class="p-2">
                     <a class="text-blue-500 underline" href="{{ route('secrets.show', $secret->slug) }}"
                         wire:navigate>{{ $secret->name }}</a>
