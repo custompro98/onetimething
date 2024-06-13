@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Secret;
+use Illuminate\Support\Facades\Crypt;
 use Livewire\Volt\Component;
 
 new class extends Component
@@ -16,7 +17,7 @@ new class extends Component
 
     public function reveal()
     {
-        $this->value = $this->secret->value;
+        $this->value = Crypt::decryptString($this->secret->value);
         $this->secret->delete();
     }
 };
