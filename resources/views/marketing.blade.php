@@ -17,7 +17,7 @@
 
 <body>
     <main class="min-h-[90vh]">
-        <nav class="bg-fuchsia-200 text-lg flex justify-end p-4 sm:p-6 lg:px-8 gap-2 items-center">
+        <nav class="bg-fuchsia-200 text-lg flex justify-end p-4 sm:p-6 lg:px-8 gap-4 items-center">
             @auth
                 <a href="{{ route('secrets.index') }}" class="hover:underline">Secrets</a>
                 <a href="{{ route('secrets.index') }}" class="hover:underline">Log out</a>
