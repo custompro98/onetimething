@@ -3,7 +3,7 @@
 use App\Http\Controllers\SecretController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
+Route::view('/', 'marketing');
 
 Route::get('/secrets', [SecretController::class, 'index'])
     ->middleware(['auth', 'verified'])
