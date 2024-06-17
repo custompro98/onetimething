@@ -17,8 +17,13 @@
 
 <body>
     <main class="min-h-[90vh]">
-        <nav class="bg-fuchsia-200 text-lg flex justify-end p-4 sm:p-6 lg:px-8">
-            <a href="{{ route('login') }}">Login</a>
+        <nav class="bg-fuchsia-200 text-lg flex justify-end p-4 sm:p-6 lg:px-8 gap-2 items-center">
+            @auth
+                <a href="{{ route('secrets.index') }}" class="hover:underline">Secrets</a>
+                <a href="{{ route('secrets.index') }}" class="hover:underline">Log out</a>
+            @else
+                <a href="{{ route('login') }}" class="hover:underline">Log in</a>
+            @endauth
         </nav>
         <section class="h-[40vh] bg-fuchsia-200 flex flex-col items-center justify-center">
             <div class="max-w-7xl mx-auto">
