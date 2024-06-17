@@ -29,10 +29,10 @@
                 <h2 class="text-xl tracking-tight">Keep it secret, keep it safe.</h2>
             </div>
             <div class="flex flex-col justify-center h-1/3">
-                <button
+                <a href="{{ route('register') }}"
                     class="border border-black p-4 text-lg rounded-full shadow shadow-gray-700 bg-white hover:bg-gray-100 active:shadow-inner active:shadow-gray-500">
-                    <a href="{{ route('register') }}">Get started</a>
-                </button>
+                    Get started
+                </a>
             </div>
         </section>
         <section
