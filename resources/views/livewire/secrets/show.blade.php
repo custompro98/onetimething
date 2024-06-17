@@ -27,7 +27,8 @@ new class extends Component
 <div class="flex flex-col gap-2">
     <div class="flex flex-row justify-between items-center">
         <h1 class="text-2xl font-semibold">{{ $this->secret->name }}</h1>
-        <button wire:click="reveal" {{ $this->value === '' ? '' : 'disabled' }}>
+        <button wire:click="reveal" {{ $this->value === '' ? '' : 'disabled' }}
+            class="{{ $this->value === '' ? '' : 'opacity-50' }}">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -36,9 +37,15 @@ new class extends Component
             </svg>
         </button>
     </div>
-    @if (strlen($this->value > 0))
-        <p class="max-w-sm overflow-ellipsis overflow-hidden">{{ $this->value }}</p>
-    @else
-        <p class="max-w-sm">This secret is considered burned once revealed.</p>
-    @endif
+    <div class="flex flex-row items-center justify-center">
+        @if (strlen($this->value > 0))
+            <p class="max-w-sm overflow-ellipsis overflow-hidden">{{ $this->value }}</p>
+        @else
+            <div class="flex flex-row items-center justify-center gap-1">
+                <span class="text-yellow-500">⚠️</span>
+                <span class="text-sm">This secret is considered burned once revealed.</span>
+                <span class="text-yellow-500">⚠️</span>
+            </div>
+        @endif
+    </div>
 </div>

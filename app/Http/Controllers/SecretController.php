@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Secret;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -16,7 +17,7 @@ class SecretController extends Controller
     public function show(Request $request, string $slug): View|Factory
     {
         return view('secrets.show', [
-            'secret' => auth()->user()->secrets()->where('slug', $slug)->firstOrFail(),
+            'secret' => Secret::where('slug', $slug)->firstOrFail(),
         ]);
     }
 }
