@@ -16,6 +16,11 @@
 </head>
 
 <body>
+    <div class="w-full h-full absolute z-[-1] overflow-hidden">
+        <div
+            class="w-full max-w-screen-2xl aspect-square mx-auto my-auto left-0 right-0 rounded-full border-[4px] border-dashed border-fuchsia-200/75 animate-spin-slow">
+        </div>
+    </div>
     <main class="min-h-[90vh]">
         <nav class="bg-fuchsia-200 text-lg flex justify-end p-4 sm:p-6 lg:px-8 gap-4 items-center">
             @auth
