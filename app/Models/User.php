@@ -47,6 +47,11 @@ class User extends Authenticatable
         ];
     }
 
+    /**
+     * Get user's valid secrets.
+     *
+     * @return HasMany<Secret>
+     */
     public function secrets(): HasMany
     {
         return $this
